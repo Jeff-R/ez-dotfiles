@@ -11,7 +11,7 @@ set shiftwidth=2                            " number of spaces inserted per leve
 set incsearch                               " incremental searching
 set cursorline                              " highlight screen line of the cursor
 set scrolloff=3                             " always show 3 lines above/below cursor line
-set number                                  " display line numbers
+set nonumber                                  " display line numbers
 set showmatch                               " briefly displays matching bracket
 set wildmode=longest,list                   " shell-like file completion
 set splitbelow                              " new splits open below
@@ -108,4 +108,40 @@ inoremap <s-tab> <c-n>
 function! RunSpec(args)
   let cmd = ":! clear && spec % -cfn " . a:args
   execute cmd
+endfunction
+
+
+" Folding for Ruby
+"
+" ,z  -- Show only last search
+" ,zz -- Show only "describe ..." and "it ..." lines in specs
+" ,zd -- Show only "class ..." and "def ..." lines in Ruby files
+" zR  -- Remove all folds
+"
+" From http://vim.wikia.com/wiki/Folding_with_Regular_Expression
+nnoremap ,z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0 foldcolumn=2<CR>
+
+" Then variations on that, with different searches ...
+"
+" Fold spec files, displaying "describe ..." and "it ..." lines
+function! FoldSpec()
+  let @/='\(describe.*do$\|it.*do$\)'
+  setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0 foldcolumn=2
+endfunction
+map ,zz :call FoldSpec()<CR>
+
+" Fold Ruby, showing class and method definitions
+function! FoldDefs()
+  let @/='\(module\ \|class\ \|has_many\ \|belongs_to\ \|_filter\ \|helper\ \|belongs_to\ \|def\ \|private\|protected\)'
+  setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0 foldcolumn=2
+endfunction
+map ,zd :call FoldDefs()<CR>
+
+" Set the text that represents folded lines to a simple dash, showing no
+" information.
+" This way, when viewing folded specs and classes, there is minimal cruft on
+" the screen to distract from the unfolded content.
+set foldtext=MyFoldText()
+function! MyFoldText()
+  return "-"
 endfunction
