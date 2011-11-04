@@ -111,6 +111,8 @@ function! RunSpec(args)
 endfunction
 
 
+" Jeff's changes
+
 " Folding for Ruby
 "
 " ,z  -- Show only last search
@@ -145,3 +147,5 @@ set foldtext=MyFoldText()
 function! MyFoldText()
   return "-"
 endfunction
+
+set t_Co=256color
