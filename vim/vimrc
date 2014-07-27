@@ -41,8 +41,18 @@ set statusline+=%P
 set background=dark
 colorscheme railscasts
 
-" save Jeff a key press
-map ; :
+" vim helpers
+map ,m :set number!<CR>
+map ,p :set paste!<CR>
+
+augroup myvimrchooks
+  au!
+  autocmd bufwritepost .vimrc,.vimrc.local source ~/.vimrc
+augroup END
+
+set undofile
+set undodir=~/tmp,/tmp
+set backupdir=~/tmp,/tmp
 
 " rspec integration
 map ,t :call RunSpecFile()<CR>
@@ -194,3 +204,14 @@ function! MyFoldText()
 endfunction
 
 set t_Co=256color
+
+map ; :
+map ,1 :!git show <c-r><c-w><cr>
+map ,b :!git branch --contains <c-r><c-w><cr>
+map ,g :!git l --grep <c-r><c-w><cr>
+map ,<space> :% s/\s*$// <cr>
+map ,r :source ~/.vimrc <cr>
+map ,e :E<cr>
+map <left>  :cp<cr>
+map <right> :cn<cr>
+map Y y$
