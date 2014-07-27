@@ -28,5 +28,6 @@ export EDITOR=vim
 
 export LS_COLORS='no=00:fi=00:di=32:ln=35:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;37;41:mi=01;05;37;41:ex=31'
 
+set -o vi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
