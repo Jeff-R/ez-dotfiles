@@ -205,13 +205,48 @@ endfunction
 
 set t_Co=256color
 
-map ; :
-map ,1 :!git show <c-r><c-w><cr>
-map ,b :!git branch --contains <c-r><c-w><cr>
-map ,g :!git l --grep <c-r><c-w><cr>
-map ,<space> :% s/\s*$// <cr>
-map ,r :source ~/.vimrc <cr>
-map ,e :E<cr>
-map <left>  :cp<cr>
-map <right> :cn<cr>
-map Y y$
+nmap ; :
+nmap ,1 :!git show <c-r><c-w><cr>
+nmap ,b :!git branch --contains <c-r><c-w><cr>
+nmap ,c :Ag <c-r><c-w> spec/ <cr>
+nmap ,g :!git l --grep <c-r><c-w><cr>
+nmap ,o :!open https://www.pivotaltracker.com/story/show/<c-r><c-w><cr>
+nmap ,<space> :% s/\s*$// <cr>
+nmap ,r :source ~/.vimrc <cr>
+nmap ,rp Orequire "pry"<cr>binding.pry<esc>
+nmap ,e :E<cr>
+nmap <left>  :cp<cr>
+nmap <right> :cn<cr> 
+nmap ,2 o<esc>k :r ! ./get_story_from_commit  <c-r><c-w><esc> kddpkJ <cr>dd
+nmap Y y$
+nmap ,vp :execute "rightbelow vsplit " . bufname("#")<cr>
+
+" For StreamSend qa tests
+" interpret the word under the cursor as referring to a page object,
+" and then edit the file containing that page object.
+function! PathForPageObjectUnderCursor()
+  let page_name = expand("<cword>")
+  let len = strlen(page_name)
+  let page_name = strpart(page_name,0,len-5)
+  let page_file_name = "spec/support/pages/" . strpart(page_name,0,len-5) . ".rb"
+  return page_file_name
+endfunction
+function! SplitToPageObjectUnderCursor()
+  :exe ":vsp " . PathForPageObjectUnderCursor()
+endfunction
+function! GoToPageObjectUnderCursor()
+  :exe ":e " . PathForPageObjectUnderCursor()
+endfunction
+nmap ,a :call GoToPageObjectUnderCursor()<cr>
+nmap ,av :call SplitToPageObjectUnderCursor()<cr>
+
+map ,gp :e spec/support/pages/ <cr>
+  
+augroup myvimrchooks
+  au!
+  autocmd bufwritepost .vimrc,.vimrc.local source ~/.vimrc
+augroup END
+
+set undofile
+set undodir=~/tmp,/tmp
+set backupdir=~/tmp,/tmp 
