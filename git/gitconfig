@@ -16,3 +16,8 @@
 	# email = you@example.com
 [branch]
 	autosetupmerge = true
+[user]
+	email = jeff@jeffroush.com
+	name = Jeff Roush
+[push]
+	default = simple
