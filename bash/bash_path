@@ -1,5 +1,5 @@
 # my scripts
-export PATH=$HOME/scripts
+export PATH=$HOME/scripts:$HOME/bin:$HOME/bin/node_bin
 # /usr/local
 export PATH=$PATH:/usr/local/bin:/usr/local/mysql/bin
 # macports
