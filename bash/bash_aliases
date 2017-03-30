@@ -9,6 +9,7 @@ alias ezlogin='ssh login-1'
 alias gems='cd $GEM_HOME/gems'
 alias vi='vim'
 alias be='bundle exec'
+alias setname='tmux rename-session `basename $PWD`'
 
 alias dc="docker-compose"
 alias dps="docker ps"
