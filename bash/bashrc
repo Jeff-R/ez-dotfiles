@@ -62,7 +62,6 @@ else
     start_agent;
 fi
 
-export HOST_IP=`/home/jeff/projects/gitlab/find_ip`
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+nvm use stable

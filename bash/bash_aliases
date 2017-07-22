@@ -13,3 +13,4 @@ alias setname='tmux rename-session `basename $PWD`'
 
 alias dc="docker-compose"
 alias dps="docker ps"
+alias t="todo.sh"
