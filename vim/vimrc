@@ -30,14 +30,10 @@ Plug 'moll/vim-node'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'valloric/youcompleteme'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
 Plug 'mxw/vim-jsx'
 call plug#end()
-
-" for youcompleteme:
-" Compile youcompleteme: https://github.com/valloric/youcompleteme
 
 " todo:
 " fix ack.vim
