@@ -1,3 +1,7 @@
+" neovim:
+"   You need to put plug.vim where nvim can find it:
+"   symlink ~/.local/share/nvim/site/autoload/plug.vim -> /home/jeff/dotfiles_nvim/vim/vim/autoload/plug.vim
+
 set nocompatible                            " not compatible with vi
 
 filetype off                                " disable system ftdetect files
@@ -113,7 +117,7 @@ map ,p :set paste!<CR>
 
 augroup myvimrchooks
   au!
-  autocmd bufwritepost .vimrc,.vimrc.local source ~/.vimrc
+  autocmd bufwritepost .vimrc,.vimrc.local source ~/dotfiles_nvim/vim/vimrc
 augroup END
 
 set undofile
@@ -278,7 +282,7 @@ nmap ,c :Ag <c-r><c-w> spec/ <cr>
 nmap ,g :!git l --grep <c-r><c-w><cr>
 nmap ,o :!open https://www.pivotaltracker.com/story/show/<c-r><c-w><cr>
 nmap ,<space> :% s/\s*$// <cr>
-nmap ,r :source ~/.vimrc <cr>
+nmap ,r :source ~/dotfiles_nvim/vim/vimrc <cr>
 nmap ,rp Orequire "pry"<cr>binding.pry<esc>
 nmap ,e :E<cr>
 nmap <left>  :cp<cr>
