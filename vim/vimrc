@@ -151,6 +151,13 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <C-h> <C-w>h
 
+" resize windows
+nmap + :vertical resize +5<cr>
+nmap - :vertical resize -5<cr>
+nmap _ :vertical resize -5<cr>
+nmap K :res -5<cr>
+nmap J :res +5<cr>
+
 " clear search highlight
 map <silent> <LocalLeader>nh :nohls<CR>
 map <silent> <LocalLeader>\ :nohls<CR>
