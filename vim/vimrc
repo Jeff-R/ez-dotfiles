@@ -143,7 +143,7 @@ map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg
 map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
 map <silent> <LocalLeader>nr :NERDTree<CR>
 map <silent> <LocalLeader>nf :NERDTreeFind<CR>
-map <F3> :NERDTreeToggle<CR>
+map <C-\> :NERDTreeToggle<CR>
 
 " switch windows
 map <C-j> <C-w>j
