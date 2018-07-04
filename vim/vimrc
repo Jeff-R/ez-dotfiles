@@ -141,6 +141,7 @@ map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg
 
 " NERD Tree
 map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
+map <silent> <C-\> :NERDTreeToggle<CR>
 map <silent> <LocalLeader>nr :NERDTree<CR>
 map <silent> <LocalLeader>nf :NERDTreeFind<CR>
 map <F3> :NERDTreeToggle<CR>

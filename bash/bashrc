@@ -62,6 +62,26 @@ else
     start_agent;
 fi
 
+explain () {
+if [ "$#" -eq 0 ]; then
+  while read  -p "Command: " cmd; do
+  curl -Gs "https://www.mankier.com/api/explain/?cols="$(tput cols) --data-urlencode "q=$cmd"
+  done
+  echo "Bye!"
+  elif [ "$#" -eq 1 ]; then
+  curl -Gs "https://www.mankier.com/api/explain/?cols="$(tput cols) --data-urlencode "q=$1"
+  else
+  echo "Usage"
+  echo "explain                  interactive mode."
+  echo "explain 'cmd -o | ...'   one quoted command to explain it."
+fi
+}
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm use stable
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
