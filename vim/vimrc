@@ -30,6 +30,9 @@ Plug 'valloric/youcompleteme'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
 Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
+Plug '/usr/sbin/fzf'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " for youcompleteme:
@@ -94,8 +97,14 @@ set statusline+=%1*%y%*%*\                  " file type
 set statusline+=%10(L(%l/%L)%)\             " line
 set statusline+=%2(C(%v/125)%)\             " column
 set statusline+=%P
+set nohlsearch
 
 set background=dark
+colorscheme Revolution
+colorscheme Spink
+colorscheme adrian
+colorscheme advantage
+" colorscheme slate
 " colorscheme delek
 " colorscheme desert
 " colorscheme delphi
@@ -103,7 +112,6 @@ set background=dark
 " colorscheme earthburn
 " colorscheme openbsd
 
-" colorscheme slate
 " colorscheme jellybeans
 " colorscheme busybee
 
@@ -141,6 +149,7 @@ map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg
 
 " NERD Tree
 map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
+map <silent> <c-\> :NERDTreeToggle<CR>
 map <silent> <LocalLeader>nr :NERDTree<CR>
 map <silent> <LocalLeader>nf :NERDTreeFind<CR>
 map <F3> :NERDTreeToggle<CR>
