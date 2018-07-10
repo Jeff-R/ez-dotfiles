@@ -141,8 +141,8 @@ map <LocalLeader>aw :Ack '<C-R><C-W>'
 " hash rocket
 imap <C-L> <SPACE>=><SPACE>
 
-" command-t
-map <silent> <LocalLeader>t  :CommandT<CR>
+" FZF
+map <c-t> :FZF<cr>
 
 " retag
 map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f<CR>
