@@ -14,3 +14,4 @@ alias setname='tmux rename-session `basename $PWD`'
 alias dc="docker-compose"
 alias dps="docker ps"
 alias dpsn='docker ps --format="{{.Names}}"'
+alias mux='tmuxinator'
