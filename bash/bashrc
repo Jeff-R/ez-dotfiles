@@ -73,4 +73,4 @@ export NODE_PATH=$NODE_PATH:`npm root -g`export NODE_PATH=$NODE_PATH:`npm root -
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # local config
-source ./.bashrc_local
+source ~/.bashrc_local

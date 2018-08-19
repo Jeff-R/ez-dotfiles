@@ -21,18 +21,22 @@ Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'Raimondi/delimitMate'
 Plug 'sirtaj/vim-openscad'
 Plug 'moll/vim-node'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'valloric/youcompleteme'
+" Plug 'valloric/youcompleteme'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
-Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
 Plug '/usr/sbin/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'vimwiki/vimwiki'
+
+" Plug 'w0rp/ale'
 call plug#end()
 
 " for youcompleteme:
@@ -177,7 +181,7 @@ autocmd BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
 " Set up highlight group & retain through colorscheme changes
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-map <silent> <LocalLeader>ws :highlight clear ExtraWhitespace<CR>
+" map <silent> <LocalLeader>ws :highlight clear ExtraWhitespace<CR>
 
 " tab autocomplete or indent depending on context
 function! InsertTabWrapper()
@@ -349,4 +353,8 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
+let g:vimwiki_list = [{'path': '/home/jeff/Dropbox/projects/notes/vimwiki', 'path_html': '/home/jeff/Dropbox/projects/notes/vimwiki/html'}]
+
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+" Set this variable to 1 to fix files when you save them.
+" let g:ale_fix_on_save = 1
