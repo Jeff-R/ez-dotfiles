@@ -104,18 +104,19 @@ set statusline+=%P
 set nohlsearch
 
 set background=light
+" colorscheme slate
+" colorscheme jellybeans
+
 " colorscheme Revolution
 " colorscheme Spink
 " colorscheme adrian
 " colorscheme advantage
-colorscheme slate
 " colorscheme desert
 " colorscheme delphi
 " colorscheme developer
 " colorscheme earthburn
 " colorscheme openbsd
 
-colorscheme jellybeans
 " colorscheme busybee
 
 " light
