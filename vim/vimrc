@@ -25,7 +25,7 @@ Plug 'mxw/vim-jsx'
 Plug 'Raimondi/delimitMate'
 Plug 'sirtaj/vim-openscad'
 Plug 'moll/vim-node'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'valloric/youcompleteme'
@@ -103,21 +103,23 @@ set statusline+=%2(C(%v/125)%)\             " column
 set statusline+=%P
 set nohlsearch
 
-set background=dark
-colorscheme Revolution
-colorscheme Spink
-colorscheme adrian
-colorscheme advantage
-" colorscheme slate
-" colorscheme delek
+set background=light
+" colorscheme Revolution
+" colorscheme Spink
+" colorscheme adrian
+" colorscheme advantage
+colorscheme slate
 " colorscheme desert
 " colorscheme delphi
 " colorscheme developer
 " colorscheme earthburn
 " colorscheme openbsd
 
-" colorscheme jellybeans
+colorscheme jellybeans
 " colorscheme busybee
+
+" light
+" colorscheme delek
 
 " vim helpers
 map ,m :set number!<CR>
