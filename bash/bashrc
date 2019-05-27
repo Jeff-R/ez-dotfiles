@@ -62,15 +62,25 @@ else
     start_agent;
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm use stable
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-export NODE_PATH=$NODE_PATH:`npm root -g`export NODE_PATH=$NODE_PATH:`npm root -g`
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# nvm use stable
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#
+# export NODE_PATH=$NODE_PATH:`npm root -g`export NODE_PATH=$NODE_PATH:`npm root -g`
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
 
 # local config
-source ~/.bashrc_local
+# source ~/.bashrc_local
+
+# JAVA_HOME=/usr/lib/jvm/jdk1.7.0
+# JAVA_HOME=/home/jeff/Downloads/java/jre1.8.0_201
+
+# PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+# export JAVA_HOME
+# export JRE_HOME
+# export PATH
